@@ -29,6 +29,14 @@ env:
   # BUILD_PATH: subfolder
 
 jobs:
+               
+  setup:
+    name: Setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4.0.0
+
   build:
     name: Build
     runs-on: ubuntu-latest
