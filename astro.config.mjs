@@ -9,9 +9,3 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [metaTags(), relativeLinks()],
 })
-
-export const siteConfig = {
-  title: 'Github Actions',
-  description: 'Minimal CSS Framework for Semantic HTML',
-  image: '/open-graph.jpg',
-}
