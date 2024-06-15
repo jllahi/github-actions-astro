@@ -9,8 +9,8 @@ import { type Props as SEOProps, SEO } from 'astro-seo'
 import { SITE } from '@/data/config'
 
 interface Props {
-	seo?: SEOProps
-	// title: string
+  seo?: SEOProps
+  // title: string
 }
 
 const { seo } = Astro.props
@@ -18,45 +18,45 @@ const { seo } = Astro.props
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="color-scheme" content="light dark" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		{
-			// <link
-			// 	href="/pico-mark-light.svg"
-			// 	rel="icon"
-			// 	media="(prefers-color-scheme: light)"
-			// />
-			// <link
-			// 	href="/pico-mark-dark.svg"
-			// 	rel="icon"
-			// 	media="(prefers-color-scheme: dark)"
-			// />
-		}
-		<SEO
-			titleTemplate=`%s | ${SITE.title}`
-			titleDefault={SITE.title}
-			title={seo?.title}
-			description={seo?.description || SITE.description}
-			openGraph={{
-				basic: {
-					title: seo?.title || SITE.title,
-					type: 'website', // https://ogp.me/#types
-					image: SITE.image || '/open-graph.jpg',
-				},
-			}}
-			{...seo}
-		/>
-		<ViewTransitions />
-	</head>
-	<body>
-		<Header />
-		<main class="container">
-			<slot />
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    {
+      // <link
+      // 	href="/pico-mark-light.svg"
+      // 	rel="icon"
+      // 	media="(prefers-color-scheme: light)"
+      // />
+      // <link
+      // 	href="/pico-mark-dark.svg"
+      // 	rel="icon"
+      // 	media="(prefers-color-scheme: dark)"
+      // />
+    }
+    <SEO
+      titleTemplate=`%s | ${SITE.title}`
+      titleDefault={SITE.title}
+      title={seo?.title}
+      description={seo?.description || SITE.description}
+      openGraph={{
+        basic: {
+          title: seo?.title || SITE.title,
+          type: 'website', // https://ogp.me/#types
+          image: SITE.image || '/open-graph.jpg',
+        },
+      }}
+      {...seo}
+    />
+    <ViewTransitions />
+  </head>
+  <body>
+    <Header />
+    <main class="container">
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
