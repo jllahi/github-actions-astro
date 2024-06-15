@@ -1,0 +1,16 @@
+/* @tailwind base; */
+/* @tailwind components; */
+/* @tailwind utilities; */
+
+:root {
+	--pico-font-family-sans-serif: 'Figtree Variable', system-ui, 'Segoe UI',
+		Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, 'Helvetica Neue',
+		sans-serif, var(--pico-font-family-emoji);
+	/* --pico-font-size: 100%; */
+	/* --pico-border-radius: 2rem; */
+}
+/* h1 {
+  --pico-font-family: 'Nunito Variable', sans-serif;
+  --pico-font-weight: 700;
+  --pico-typography-spacing-vertical: 0.5rem;
+} */

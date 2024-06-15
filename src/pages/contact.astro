@@ -1,0 +1,41 @@
+---
+import Accordion from '@/components/Accordion.astro'
+import Layout from '@/layouts/Layout.astro'
+---
+
+<Layout seo={{ title: 'Contact', description: 'Send your message now' }}>
+	<section class="grid">
+		<hgroup>
+			<h1>Contact form</h1>
+			<p>Excepteur dolore amet nulla consequat ipsum qui sunt.</p>
+		</hgroup>
+		<form>
+			<fieldset>
+				<label>
+					First name
+					<input
+						name="first_name"
+						placeholder="First name"
+						autocomplete="given-name"
+					/>
+				</label>
+				<label>
+					Email
+					<input
+						type="email"
+						name="email"
+						placeholder="Email"
+						autocomplete="email"
+					/>
+				</label>
+			</fieldset>
+			<div class="grid">
+				<input type="submit" />
+				<input type="reset" class="outline" />
+			</div>
+		</form>
+	</section>
+	<section>
+		<Accordion />
+	</section>
+</Layout>

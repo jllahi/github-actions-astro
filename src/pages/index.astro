@@ -1,0 +1,12 @@
+---
+import Card from '@/components/Card.astro'
+import Layout from '@/layouts/Layout.astro'
+---
+
+<Layout>
+	<section class="grid">
+		<Card header="Current time:" footer={new Date().toLocaleDateString()}
+			>{new Date().toLocaleTimeString()}</Card
+		>
+	</section>
+</Layout>

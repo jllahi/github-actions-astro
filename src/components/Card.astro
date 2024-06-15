@@ -1,0 +1,40 @@
+---
+interface Props {
+	header?: string
+	// body: string;
+	footer?: string
+	href?: string
+}
+
+const { header, footer, href } = Astro.props
+
+// <li class="link-card">
+// 	<a href={href}>
+// 		<h2>
+// 			{title}
+// 			<span>&rarr;</span>
+// 		</h2>
+// 		<p>
+// 			{body}
+// 		</p>
+// 	</a>
+// </li>
+---
+
+<article>
+	{
+		header && (
+			<header class="text-xl font-black">
+				{href ? (
+					<h3>
+						<a href={href}>{header}</a>
+					</h3>
+				) : (
+					<h3>{header}</h3>
+				)}
+			</header>
+		)
+	}
+	<h1><slot /></h1>
+	{footer && <footer>{footer}</footer>}
+</article>
