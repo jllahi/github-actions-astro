@@ -20,6 +20,9 @@ importers:
       astro:
         specifier: ^4.10.2
         version: 4.10.2(@types/node@20.14.2)(typescript@5.4.5)
+      astro-relative-links:
+        specifier: ^0.3.9
+        version: 0.3.9(astro@4.10.2(@types/node@20.14.2)(typescript@5.4.5))
       astro-seo:
         specifier: ^0.8.4
         version: 0.8.4(prettier-plugin-astro@0.14.0)(prettier@3.3.2)(typescript@5.4.5)
@@ -1042,6 +1045,11 @@ packages:
     resolution: {integrity: sha512-BA8jZncOGz1DkjK4AQHt8mzXurGwhR96CZZlx2wLemRUqKTxft4N2Arg8DK/s49G/9F0g4TuxmiObVkIv/DX8g==}
     peerDependencies:
       astro: ^4.0.0
+
+  astro-relative-links@0.3.9:
+    resolution: {integrity: sha512-4CdLBRI7aU/Irb2BYdicHpBf+9n0SsrN02Yu/P7b3Y1i4AZQTHCtcq044egan83Y8ORU6i5fc2hFVmXeAFlKkw==}
+    peerDependencies:
+      astro: ^3.0.0 || ^4.0.0
 
   astro-seo@0.8.4:
     resolution: {integrity: sha512-Ou1vzQSXAxa0K8rtNtXNvSpYqOGEgMhh0immMxJeXmbVZac3UKCNWAoXWyOQDFYsZvBugCRSg0N1phBqPMVgCw==}
@@ -4101,6 +4109,11 @@ snapshots:
   astro-meta-tags@0.3.0(astro@4.10.2(@types/node@20.14.2)(typescript@5.4.5)):
     dependencies:
       astro: 4.10.2(@types/node@20.14.2)(typescript@5.4.5)
+
+  astro-relative-links@0.3.9(astro@4.10.2(@types/node@20.14.2)(typescript@5.4.5)):
+    dependencies:
+      astro: 4.10.2(@types/node@20.14.2)(typescript@5.4.5)
+      glob: 10.4.1
 
   astro-seo@0.8.4(prettier-plugin-astro@0.14.0)(prettier@3.3.2)(typescript@5.4.5):
     dependencies:
