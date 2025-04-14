@@ -4,7 +4,7 @@ import '@picocss/pico/css/pico.amber.min.css'
 // import '@/assets/styles/globals.css'
 import Footer from '@/components/Footer.astro'
 import Header from '@/components/Header.astro'
-import { SITE } from '@/data/config'
+import { BASE_URL, SITE } from '@/data/config'
 import { type Props as SEOProps, SEO } from 'astro-seo'
 import { ClientRouter } from 'astro:transitions'
 
@@ -46,7 +46,7 @@ const { seo } = Astro.props as Props
 				basic: {
 					title: seo?.title || SITE.title,
 					type: 'website', // https://ogp.me/#types
-					image: SITE.image || 'open-graph.jpg',
+					image: BASE_URL + SITE.image || `{$BASE_URL}/open-graph.jpg`,
 				},
 			}}
 			{...seo}

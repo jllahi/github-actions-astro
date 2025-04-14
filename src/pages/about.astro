@@ -1,9 +1,22 @@
 ---
 import Accordion from '@/components/Accordion.astro'
+import { BASE_URL } from '@/data/config'
 import Layout from '@/layouts/Layout.astro'
 ---
 
-<Layout seo={{ title: 'Contact', description: 'Send your message now' }}>
+<Layout
+	seo={{
+		title: 'Contact',
+		description: 'Send your message now',
+		openGraph: {
+			basic: {
+				title: 'Contact',
+				type: 'website',
+				image: BASE_URL + '/about.jpg',
+			},
+		},
+	}}
+>
 	<section class="grid">
 		<Accordion />
 	</section>
