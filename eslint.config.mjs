@@ -1,110 +1,123 @@
-import { FlatCompat } from "@eslint/eslintrc";
-import js from "@eslint/js";
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import tsParser from "@typescript-eslint/parser";
-import parser from "astro-eslint-parser";
-import { defineConfig } from "eslint/config";
-import globals from "globals";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { FlatCompat } from '@eslint/eslintrc'
+import js from '@eslint/js'
+import typescriptEslint from '@typescript-eslint/eslint-plugin'
+import tsParser from '@typescript-eslint/parser'
+import parser from 'astro-eslint-parser'
+import { defineConfig } from 'eslint/config'
+import globals from 'globals'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
-});
+	baseDirectory: __dirname,
+	recommendedConfig: js.configs.recommended,
+	allConfig: js.configs.all,
+})
 
-export default defineConfig([{
-    extends: compat.extends("eslint:recommended", "plugin:astro/recommended"),
+export default defineConfig([
+	{
+		extends: compat.extends('eslint:recommended', 'plugin:astro/recommended'),
 
-    languageOptions: {
-        globals: {
-            ...globals.node,
-            ...globals.browser,
-        },
+		languageOptions: {
+			globals: {
+				...globals.node,
+				...globals.browser,
+			},
 
-        ecmaVersion: "latest",
-        sourceType: "module",
-    },
+			ecmaVersion: 'latest',
+			sourceType: 'module',
+		},
 
-    rules: {
-        "no-mixed-spaces-and-tabs": "off",
-    },
-}, {
-    files: ["**/*.astro"],
+		rules: {
+			'no-mixed-spaces-and-tabs': 'off',
+		},
+	},
+	{
+		files: ['**/*.astro'],
 
-    languageOptions: {
-        parser: parser,
-        ecmaVersion: 5,
-        sourceType: "script",
+		languageOptions: {
+			parser: parser,
+			ecmaVersion: 5,
+			sourceType: 'script',
 
-        parserOptions: {
-            parser: "@typescript-eslint/parser",
-            extraFileExtensions: [".astro"],
-        },
-    },
+			parserOptions: {
+				parser: '@typescript-eslint/parser',
+				extraFileExtensions: ['.astro'],
+			},
+		},
 
-    rules: {},
-}, {
-    files: ["**/*.ts"],
-    extends: compat.extends("plugin:@typescript-eslint/recommended"),
+		rules: {},
+	},
+	{
+		files: ['**/*.ts'],
+		extends: compat.extends('plugin:@typescript-eslint/recommended'),
 
-    languageOptions: {
-        parser: tsParser,
-    },
+		languageOptions: {
+			parser: tsParser,
+		},
 
-    rules: {
-        "@typescript-eslint/no-unused-vars": ["error", {
-            argsIgnorePattern: "^_",
-            destructuredArrayIgnorePattern: "^_",
-        }],
+		rules: {
+			'@typescript-eslint/no-unused-vars': [
+				'error',
+				{
+					argsIgnorePattern: '^_',
+					destructuredArrayIgnorePattern: '^_',
+				},
+			],
 
-        "@typescript-eslint/no-non-null-assertion": "off",
-    },
-}, {
-    files: ["**/*.d.ts"],
+			'@typescript-eslint/no-non-null-assertion': 'off',
+		},
+	},
+	{
+		files: ['**/*.d.ts'],
 
-    rules: {
-        "@typescript-eslint/triple-slash-reference": "off",
-    },
-}, {
-    files: ["**/*.tsx"],
+		rules: {
+			'@typescript-eslint/triple-slash-reference': 'off',
+		},
+	},
+	{
+		files: ['**/*.tsx'],
 
-    extends: compat.extends(
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    ),
+		extends: compat.extends(
+			'eslint:recommended',
+			'plugin:@typescript-eslint/recommended',
+			'plugin:@typescript-eslint/recommended-requiring-type-checking'
+		),
 
-    plugins: {
-        "@typescript-eslint": typescriptEslint,
-    },
+		plugins: {
+			'@typescript-eslint': typescriptEslint,
+		},
 
-    languageOptions: {
-        parser: tsParser,
-        ecmaVersion: 5,
-        sourceType: "script",
+		languageOptions: {
+			parser: tsParser,
+			ecmaVersion: 5,
+			sourceType: 'script',
 
-        parserOptions: {
-            tsconfigRootDir: "/home/jllahi/Code/Testing/Astro/github-actions-astro",
-            project: ["./tsconfig.json"],
-        },
-    },
+			parserOptions: {
+				tsconfigRootDir: '/home/jllahi/Code/Testing/Astro/github-actions-astro',
+				project: ['./tsconfig.json'],
+			},
+		},
 
-    rules: {
-        "@typescript-eslint/no-unused-vars": ["error", {
-            argsIgnorePattern: "^_",
-            destructuredArrayIgnorePattern: "^_",
-        }],
+		rules: {
+			'@typescript-eslint/no-unused-vars': [
+				'error',
+				{
+					argsIgnorePattern: '^_',
+					destructuredArrayIgnorePattern: '^_',
+				},
+			],
 
-        "@typescript-eslint/no-non-null-assertion": "off",
-    },
-}, {
-    files: ["**/*.astro/*.js", "*.astro/*.js"],
+			'@typescript-eslint/no-non-null-assertion': 'off',
+		},
+	},
+	{
+		files: ['**/*.astro/*.js', '*.astro/*.js'],
 
-    languageOptions: {
-        parser: tsParser,
-    },
-}]);
+		languageOptions: {
+			parser: tsParser,
+		},
+	},
+])

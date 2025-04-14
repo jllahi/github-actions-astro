@@ -4,8 +4,8 @@ import { defineConfig } from 'astro/config'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://jllahi.github.io',
-  base: '/github-actions-astro',
-  trailingSlash: 'always',
-  integrations: [metaTags(), relativeLinks()],
+	site: 'https://jllahi.github.io',
+	base: '/github-actions-astro',
+	trailingSlash: 'always',
+	integrations: [metaTags(), relativeLinks()],
 })
